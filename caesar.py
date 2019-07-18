@@ -15,7 +15,10 @@ def apply_caesar_cipher(message, shift=1):
         if message[i].isalpha():
             position_in_alphabet = alphabet.index(message[i].lower())
             position_in_alphabet = (position_in_alphabet + shift) % len(alphabet)
-            message = message[:i] + alphabet[position_in_alphabet] + message[i + 1:]
+            replacement_letter = alphabet[position_in_alphabet]
+            if message[i].isupper():
+                replacement_letter = replacement_letter.upper()
+            message = message[:i] + replacement_letter + message[i + 1:]
     return message
 
 
