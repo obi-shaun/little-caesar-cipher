@@ -2,7 +2,6 @@ import argparse
 import string
 
 alphabet = [letter for letter in string.ascii_lowercase]
-print(alphabet)
 
 parser = argparse.ArgumentParser(description="apply caesar cipher")
 parser.add_argument("--message", type=str, help="message to encode or decode", required=True)
